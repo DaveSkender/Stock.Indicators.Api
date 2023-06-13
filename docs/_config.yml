@@ -1,0 +1,77 @@
+# Ref: https://jekyllrb.com/docs/usage/
+# Local dev: bundle exec jekyll serve --livereload
+
+title: Stock Indicators API
+tagline: "Transform price quotes into trading insights."
+locale: en_US
+
+# social media information
+image:
+  path: /assets/social-banner.png
+  height: 640
+  width: 1280
+
+logo: /assets/icons/android-chrome-192x192.png
+
+social:
+  name: Dave Skender
+  links:
+    - https://twitter.com/daveskender
+    - https://www.linkedin.com/in/skender
+    - https://github.com/DaveSkender
+
+author:
+  name: Dave Skender
+  twitter: daveskender
+  url: https://www.linkedin.com/in/skender
+
+twitter:
+  username: daveskender
+  card: summary
+
+# site plugins and settings
+plugins:
+  - jekyll-github-metadata
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-last-modified-at
+  - jekyll-redirect-from
+  - jekyll-minifier
+
+exclude:
+  [
+    "*.cs",
+    "*.csproj",
+    "*.json",
+    "*.lock",
+    "*.yml",
+    "*.pptx",
+    "*.sln",
+    ".offline",
+    "docs/README.md",
+    "GemFile",
+    "node_modules",
+    "vendor",
+  ]
+
+include:
+  [
+    "home.md",
+    "contributing.md",
+  ]
+
+permalink: pretty
+
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "base"
+      image: /assets/social-banner.png
+
+# page collections
+collections:
+  indicators:
+    output: true
+    permalink: /:path
+    sort_by: "title"
