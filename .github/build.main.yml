@@ -4,6 +4,8 @@ trigger:
 pr:
   - main
 
+name: $(Date:yyyy.MM.dd)-$(BuildID)
+
 pool:
   name: Azure Pipelines
   vmImage: "ubuntu-latest"
@@ -15,9 +17,10 @@ steps:
   - task: PowerShell@2
     displayName: Swap config files
     inputs:
-      targetType: inline
-      script: >
+      targetType: 'inline'
+      script: |
         Copy-Item "api/appsettings.Token.json" -Destination "Server/WebApi/appsettings.json" -Force
+
         Remove-Item "api/appsettings.Token.json" -Force
 
   - task: qetza.replacetokens.replacetokens-task.replacetokens@3
@@ -33,7 +36,6 @@ steps:
     displayName: "use .NET SDK 7.0.x"
     inputs:
       version: 7.0.x
-      continueOnError: True
       includePreviewVersions: false
 
   - task: DotNetCoreCLI@2
