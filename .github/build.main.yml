@@ -1,0 +1,87 @@
+trigger:
+  - main
+
+pr:
+  - main
+
+pool:
+  name: Azure Pipelines
+  vmImage: "ubuntu-latest"
+
+workspace:
+  clean: all
+
+steps:
+  - task: PowerShell@2
+    displayName: Swap config files
+    inputs:
+      targetType: inline
+      script: >
+        Copy-Item "api/appsettings.Token.json" -Destination "Server/WebApi/appsettings.json" -Force
+        Remove-Item "api/appsettings.Token.json" -Force
+
+  - task: qetza.replacetokens.replacetokens-task.replacetokens@3
+    displayName: Update configurations
+    inputs:
+      rootDirectory: api
+      targetFiles: '**\*appsettings.json'
+      escapeType: none
+      tokenPrefix: __
+      tokenSuffix: __
+
+  - task: UseDotNet@2
+    displayName: "use .NET SDK 7.0.x"
+    inputs:
+      version: 7.0.x
+      continueOnError: True
+      includePreviewVersions: false
+
+  - task: DotNetCoreCLI@2
+    displayName: dotnet restore
+    inputs:
+      command: restore
+      projects: "**/*.csproj"
+
+  - task: DotNetCoreCLI@2
+    displayName: build
+    inputs:
+      command: "build"
+      projects: "**/*.csproj"
+      arguments: >
+        --configuration Release
+        /p:ContinuousIntegrationBuild=true
+        /warnaserror
+
+  - task: DotNetCoreCLI@2
+    displayName: dotnet publish
+    inputs:
+      command: publish
+      publishWebProjects: false
+      projects: api/**/*.csproj
+      arguments: -c Release -o $(Pipeline.Workspace)/a
+
+  - task: DotNetCoreCLI@2
+    displayName: "test indicators"
+    inputs:
+      command: test
+      testRunTitle: "API Tests"
+      projects: "test/**/*.csproj"
+      arguments: >
+        --configuration Release
+        --no-restore
+        --no-build
+        --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=cobertura
+      publishTestResults: true
+
+  - task: PublishCodeCoverageResults@1
+    displayName: "publish code coverage"
+    inputs:
+      codeCoverageTool: Cobertura
+      summaryFileLocation: "$(Agent.TempDirectory)/**/coverage.cobertura.xml"
+
+  - task: PublishPipelineArtifact@1
+    displayName: "save artifacts"
+    inputs:
+      targetPath: "$(Pipeline.Workspace)/a"
+      artifact: "packages"
+      publishLocation: "pipeline"
