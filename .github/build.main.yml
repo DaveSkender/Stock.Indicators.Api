@@ -19,14 +19,14 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        Copy-Item "api/appsettings.Token.json" -Destination "Server/WebApi/appsettings.json" -Force
+        Copy-Item "src/appsettings.Token.json" -Destination "src/appsettings.json" -Force
 
-        Remove-Item "api/appsettings.Token.json" -Force
+        Remove-Item "src/appsettings.Token.json" -Force
 
   - task: qetza.replacetokens.replacetokens-task.replacetokens@3
     displayName: Update configurations
     inputs:
-      rootDirectory: api
+      rootDirectory: src
       targetFiles: '**\*appsettings.json'
       escapeType: none
       tokenPrefix: __
@@ -59,7 +59,7 @@ steps:
     inputs:
       command: publish
       publishWebProjects: false
-      projects: api/**/*.csproj
+      projects: src/**/*.csproj
       arguments: -c Release -o $(Pipeline.Workspace)/a
 
   - task: DotNetCoreCLI@2
