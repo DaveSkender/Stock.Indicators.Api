@@ -9,7 +9,7 @@ ConfigurationManager configuration = builder.Configuration;
 services.AddControllers();
 
 // setup CORS for website
-IConfigurationSection corsOrigins = configuration.GetSection("CorsOrigins");
+//IConfigurationSection corsOrigins = configuration.GetSection("CorsOrigins");
 
 services.AddCors(options =>
 {
