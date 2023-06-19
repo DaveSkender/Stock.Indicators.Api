@@ -8,9 +8,22 @@ ConfigurationManager configuration = builder.Configuration;
 // add framework services
 services.AddControllers();
 
-// setup CORS for website
-//IConfigurationSection corsOrigins = configuration.GetSection("CorsOrigins");
+// get CORS origins from appsettings
+string[] origins = Array.Empty<string>();
+IConfigurationSection corsOrigins = configuration.GetSection("CorsOrigins");
 
+if (corsOrigins != null)
+{
+    List<(string key, string value)>? originKeys = corsOrigins
+      .Get<List<(string key, string value)>>();
+
+    if (originKeys != null)
+    {
+        origins = originKeys.Select(x => x.value).ToArray();
+    }
+}
+
+// setup CORS for website
 services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy",
@@ -18,7 +31,7 @@ services.AddCors(options =>
     {
         cors.AllowAnyHeader();
         cors.AllowAnyMethod();
-        //cors.WithOrigins(corsOrigins["Website"]);
+        cors.WithOrigins(origins);
     });
 });
 
