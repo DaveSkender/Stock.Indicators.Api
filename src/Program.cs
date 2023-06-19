@@ -8,6 +8,10 @@ ConfigurationManager configuration = builder.Configuration;
 // add framework services
 services.AddControllers();
 
+// swagger
+services.AddEndpointsApiExplorer();
+services.AddSwaggerGen();
+
 // get CORS origins from appsettings
 string[] origins = Array.Empty<string>();
 IConfigurationSection corsOrigins = configuration.GetSection("CorsOrigins");
@@ -38,11 +42,22 @@ services.AddCors(options =>
 // build application
 WebApplication app = builder.Build();
 
-// Configure the HTTP request pipeline.
-_ = app.Environment.IsDevelopment()
-  ? app.UseDeveloperExceptionPage()
-  : app.UseHsts();
+// setup development environment
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
 
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+// production alternatives
+else
+{
+    app.UseHsts();
+}
+
+// configure the HTTP request pipeline.
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors("CorsPolicy");

@@ -44,6 +44,18 @@ Use the [Discussions](https://github.com/DaveSkender/Stock.Indicators.Api/discus
 - If you want to work on something specific, please mention your intention on the related [Issue](https://github.com/DaveSkender/Stock.Indicators/issues).  If an Issue does not exist for your contribution, please create one before starting.  This will help us reserve that feature and avoid duplicative efforts.
 - Do not commingle multiple contributions on different topics.  Please keep changes small and separate.
 
+### Local hosting
+
+From Visual Studio Solution Explorer, select the `Api` project and then `CTRL+F5` to launch the API.  Or use CLI:
+
+```bash
+dotnet build
+dotnet run --project src/Api.csproj
+```
+
+- Root endpoint is hosted as `https://localhost:[port]` and should show a `API is functioning nominally.` message in the browser.
+- Swagger UI is available on `https://localhost:[port]/swagger`
+
 ## Testing
 
 - Review the `test` folder for examples of unit tests.  Just copy one of these.
