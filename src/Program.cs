@@ -1,5 +1,7 @@
 // STARTUP CONFIGURATION
 
+using Microsoft.OpenApi.Models;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 IServiceCollection services = builder.Services;
@@ -8,9 +10,30 @@ ConfigurationManager configuration = builder.Configuration;
 // add framework services
 services.AddControllers();
 
-// swagger
+// OpenAPI (Swagger docs)
+// Learn more at https://aka.ms/aspnetcore/swashbuckle
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
+services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "Stock Indicators API",
+        Description = "We'll convert your stock quotes into market indicators.  This is a self-hosted open-source API, developed by Skender Consulting Services, LLC.",
+        TermsOfService = new Uri("https://api-docs.stockindicators.dev/terms"),
+        Contact = new OpenApiContact
+        {
+            Name = "Contact",
+            Url = new Uri("https://api-docs.stockindicators.dev")
+        },
+        License = new OpenApiLicense
+        {
+            Name = "License",
+            Url = new Uri("https://github.com/DaveSkender/Stock.Indicators.Api/blob/main/LICENSE")
+        }
+    });
+});
 
 // get CORS origins from appsettings
 string[] origins = Array.Empty<string>();
@@ -62,4 +85,9 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors("CorsPolicy");
 app.MapControllers();
+
+// add minimal API root endpoint
+app.MapGet("/", () => Results.Ok("API is functioning nominally."));
+
+// run the API
 app.Run();

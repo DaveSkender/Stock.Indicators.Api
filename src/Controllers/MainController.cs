@@ -7,12 +7,6 @@ namespace Api;
 [Route("")]
 public class MainController : ControllerBase
 {
-    [HttpGet]
-    public string Get()
-    {
-        return "API is functioning nominally.";
-    }
-
     //////////////////////////////////////////
     // INDICATORS (sorted alphabetically)
 

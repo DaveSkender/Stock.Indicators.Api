@@ -1,7 +1,7 @@
 ---
 title: Contributing guidelines
 description: >-
-  This NuGet package is an open-source project.
+  This API is an open-source project.
   Learn how to contribute issues, fixes, new indicators, new features, or to our discussions.
 permalink: /contributing/
 relative_path: contributing.md
@@ -46,15 +46,15 @@ Use the [Discussions](https://github.com/DaveSkender/Stock.Indicators.Api/discus
 
 ### Local hosting
 
-From Visual Studio Solution Explorer, select the `Api` project and then `CTRL+F5` to launch the API.  Or use CLI:
+From the Visual Studio Solution Explorer, select the `Api` project and then `CTRL+F5` to launch the API.  Or use CLI:
 
 ```bash
 dotnet build
 dotnet run --project src/Api.csproj
 ```
 
-- Root endpoint is hosted as `https://localhost:[port]` and should show a `API is functioning nominally.` message in the browser.
-- Swagger UI is available on `https://localhost:[port]/swagger`
+- Root endpoint is hosted as `https://localhost:[port]` and should show a `API is functioning nominally` message in your browser.
+- OpenAPI (Swagger) documentations is available on `https://localhost:[port]/swagger`
 
 ## Testing
 
@@ -92,7 +92,7 @@ By submitting changes to this repo you are also acknowledging and agree to the t
 When ready, submit a [Pull Request](https://help.github.com/pull-requests) with a clear list of what you've done.
 Always write a clear log message for your commits. One-line messages are fine for most changes.
 
-After a Pull Request is reviewed, accepted, and [squash] merged to `main`, we may batch changes before publishing a new package version to the [public NuGet repository](https://www.nuget.org/packages/Skender.Stock.Indicators).  Please be patient with turnaround time.
+After a Pull Request is reviewed, accepted, and [squash] merged to `main`, we may batch changes before publishing a new packaged version.  Please be patient with turnaround time.
 
 ## Code reviews and administration
 
@@ -111,7 +111,7 @@ This repository uses a standard Apache 2.0 open-source license.  It enables open
 
 ## Contact info
 
-[Start a new discussion](https://github.com/DaveSkender/Stock.Indicators/discussions) or [submit an issue](https://github.com/DaveSkender/Stock.Indicators/issues) if it is publicly relevant.  You can also direct message [@daveskender](https://twitter.com/messages/compose?recipient_id=27475431).
+[Start a new discussion](https://github.com/DaveSkender/Stock.Indicators.Api/discussions) or [submit an issue](https://github.com/DaveSkender/Stock.Indicators.Api/issues) if it is publicly relevant.  You can also direct message [@daveskender](https://twitter.com/messages/compose?recipient_id=27475431).
 
 Thanks,
 Dave Skender
