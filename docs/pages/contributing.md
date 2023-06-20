@@ -82,7 +82,7 @@ bundle exec jekyll serve
 - build the site locally (see above), then:
 
 ```bash
-npx pa11y-ci --sitemap http://127.0.0.1:4000/sitemap.xml"
+npx pa11y-ci --sitemap http://127.0.0.1:4000/sitemap.xml
 ```
 
 ## Submitting changes
