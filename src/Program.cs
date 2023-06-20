@@ -1,5 +1,6 @@
 // STARTUP CONFIGURATION
 
+using Api;
 using Microsoft.OpenApi.Models;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -19,7 +20,7 @@ services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "Stock Indicators API",
+        Title = "API | Stock Indicators",
         Description = "We'll convert your stock quotes into market indicators.  This is a self-hosted open-source API, developed by Skender Consulting Services, LLC.",
         TermsOfService = new Uri("https://api-docs.stockindicators.dev/terms"),
         Contact = new OpenApiContact
@@ -84,10 +85,12 @@ else
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors("CorsPolicy");
-app.MapControllers();
 
 // add minimal API root endpoint
-app.MapGet("/", () => Results.Ok("API is functioning nominally."));
+app.MapGet("/", () => "API is functioning nominally.");
+
+// base indicators
+Indicators.Map(app);
 
 // run the API
 app.Run();
