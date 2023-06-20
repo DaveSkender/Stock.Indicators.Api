@@ -53,4 +53,4 @@ See GitHub documentation to learn more about [managing remote repositories](http
 
 ## Getting started as a contributor
 
-See our [contributing guidelines](/docs/contributing.md).
+See our [contributing guidelines](/docs/pages/contributing.md).
