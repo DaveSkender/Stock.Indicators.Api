@@ -56,8 +56,7 @@ exclude:
 
 include:
   [
-    "home.md",
-    "contributing.md",
+    "pages"
   ]
 
 permalink: pretty
@@ -69,9 +68,3 @@ defaults:
       layout: "base"
       image: /assets/social-banner.png
 
-# page collections
-collections:
-  indicators:
-    output: true
-    permalink: /:path
-    sort_by: "title"

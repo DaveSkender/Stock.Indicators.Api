@@ -1,24 +1,24 @@
 ---
-title: Stock Indicators API
+title: API Docs | Stock Indicators
 description: >-
   Transform financial market prices into technical analysis insights with this self-hosted .NET API.
 permalink: /
 layout: base
-lazy-images: true
 ---
 
 <h1 style="display:none;">{{ page.title }}</h1>
+<h2>Reputable and extensible indicators</h2>
 
-**Stock Indicators API** is a REST API built with .NET that produces financial market technical indicators.  Send in historical price quotes and get back desired indicators such as moving averages, Relative Strength Index, Stochastic Oscillator, Parabolic SAR, etc.  Nothing more.
-
-It can be used in any market analysis software using standard OHLCV price quotes for equities, commodities, forex, cryptocurrencies, and others.  We had private technical analysis, trading algorithms, machine learning, and charting systems in mind when originally creating this library.  [Stock Indicators for .NET](https://dotnet.stockindicators.dev/) is also available.
+**Stock Indicators API** is a self-hosted REST API that converts financial market price quotes into trade indicators.  It's a language agnostic HTTP interface to our [popular NuGet library](https://dotnet.stockindicators.dev).  Both the library and this API are built with the latest .NET technology.  It can be hosted in almost any environment and operating system (Linux, Windows, MacOS, etc.).
 
 Explore more information:
 
+- [Getting started]({{site.github.repository_url}}/#readme) (and host setup)
 - [Demo site](https://charts.stockindicators.dev/) (a stock chart)
 - [Release notes]({{site.github.repository_url}}/releases)
 - [Discussions]({{site.github.repository_url}}/discussions)
 - [Contributing guidelines]({{site.baseurl}}/contributing/#content)
+- [Terms of service]({{site.baseurl}}/terms/#content)
 
 ## Licensed for everyone
 
@@ -38,7 +38,7 @@ If you want to buy me a beer or are interested in ongoing support as a patron, [
 
 ## Contribute to help others
 
-This NuGet package is an open-source project [on GitHub](https://github.com/DaveSkender/Stock.Indicators).  If you want to report bugs or contribute fixes, new indicators, or new features, please review our [contributing guidelines]({{site.baseurl}}/contributing/#content) and [the backlog](https://github.com/users/DaveSkender/projects/1).
+This API is an open-source project [on GitHub](https://github.com/DaveSkender/Stock.Indicators.Api).  If you want to report bugs or contribute fixes, new indicators, or new features, please review our [contributing guidelines]({{site.baseurl}}/contributing/#content).
 
 Special thanks to all of our community code contributors!
 
@@ -49,5 +49,3 @@ Special thanks to all of our community code contributors!
   </li>
 {% endfor %}
 </ul>
-
-<!-- &#187; see our [full list of indicators and overlays]({{site.baseurl}}/indicators/#content) -->

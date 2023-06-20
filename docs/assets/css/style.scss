@@ -66,16 +66,10 @@ $mobile-breakpoint: 480px;
   }
 }
 
-// IMPORTS
-@import "normalize.css";
-@import "rouge-github.css";
+// imports
+@forward "normalize.css";
+@forward "rouge-github.css";
 
-
-
-// BASE
-body {
-  color: $body-text-color;
-}
 
 // links
 a {
