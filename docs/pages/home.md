@@ -1,15 +1,15 @@
 ---
-title: Stock Indicators API
+title: API Docs | Stock Indicators
 description: >-
   Transform financial market prices into technical analysis insights with this self-hosted .NET API.
 permalink: /
 layout: base
-lazy-images: true
 ---
 
 <h1 style="display:none;">{{ page.title }}</h1>
+<h2>Reputable and extensible indicators</h2>
 
-**Stock Indicators API** is a self-hosted REST API that converts stock quotes into .  It provides a language agnostic interface to our [popular indicators library](https://dotnet.stockindicators.dev).  Both the library and this API are build with the latest .NET technology and can be hosted almost anywhere.  Send in historical price quotes and get back desired indicators such as moving averages, Relative Strength Index, Stochastic Oscillator, Parabolic SAR, etc.  Nothing more.
+**Stock Indicators API** is a self-hosted REST API that converts financial market price quotes into trade indicators.  It's a language agnostic HTTP interface to our [popular NuGet library](https://dotnet.stockindicators.dev).  Both the library and this API are built with the latest .NET technology.  It can be hosted in almost any environment and operating system (Linux, Windows, MacOS, etc.).
 
 Explore more information:
 
@@ -18,6 +18,7 @@ Explore more information:
 - [Release notes]({{site.github.repository_url}}/releases)
 - [Discussions]({{site.github.repository_url}}/discussions)
 - [Contributing guidelines]({{site.baseurl}}/contributing/#content)
+- [Terms of service]({{site.baseurl}}/terms/#content)
 
 ## Licensed for everyone
 
