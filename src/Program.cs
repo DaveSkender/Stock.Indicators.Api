@@ -25,8 +25,9 @@ services.AddSwaggerGen(options =>
         TermsOfService = new Uri("https://api-docs.stockindicators.dev/terms"),
         Contact = new OpenApiContact
         {
-            Name = "Contact",
-            Url = new Uri("https://api-docs.stockindicators.dev")
+            Name = "Project",
+            Url = new Uri("https://api-docs.stockindicators.dev"),
+
         },
         License = new OpenApiLicense
         {
@@ -87,7 +88,8 @@ app.UseRouting();
 app.UseCors("CorsPolicy");
 
 // add minimal API root endpoint
-app.MapGet("/", () => "API is functioning nominally.");
+app.MapGet("/", () => "API is functioning nominally.")
+  .ExcludeFromDescription();
 
 // base indicators
 Indicators.Map(app);
