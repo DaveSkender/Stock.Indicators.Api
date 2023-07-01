@@ -87,6 +87,12 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors("CorsPolicy");
 
+// allows favicon.ico to be served
+app.UseStaticFiles(new StaticFileOptions()
+{
+    RequestPath = new PathString("favicon.ico")
+});
+
 // add minimal API root endpoint
 app.MapGet("/", () => "API is functioning nominally.")
   .ExcludeFromDescription();
