@@ -1,7 +1,6 @@
 // STARTUP CONFIGURATION
 
 using Api;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.OpenApi.Models;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -85,15 +84,13 @@ else
 
 // configure the HTTP request pipeline.
 app.UseHttpsRedirection();
-app.UseRouting();
-app.UseCors("CorsPolicy");
 
 // allows favicon.ico to be served
-app.UseStaticFiles(new StaticFileOptions()
-{
-    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "favicon.ico")),
-    RequestPath = new PathString("favicon.ico")
-});
+app.UseStaticFiles();
+
+// use routing with CORS
+app.UseRouting();
+app.UseCors("CorsPolicy");
 
 // add minimal API root endpoint
 app.MapGet("/", () => "API is functioning nominally.")
