@@ -1,12 +1,18 @@
 ---
-title: API Docs | Stock Indicators
+title: API Documentation | Stock Indicators
 description: >-
-  Transform financial market prices into technical analysis insights with this self-hosted .NET API.
+  Transform financial market prices into technical analysis insights with this self-hosted .NET Web API.
 permalink: /
 layout: base
+lazy-images: true
 ---
 
 <h1 style="display:none;">{{ page.title }}</h1>
+
+> 🚧 **This documentation and related API is under development.**
+>
+> We're just getting started with development and are seeking stock indicator enthusiasts to build and maintain this open-source project.  [Learn how you can contribute]({{site.baseurl}}/contributing/#content) to make this API available to others.
+
 <h2>Reputable and extensible indicators</h2>
 
 **Stock Indicators API** is a self-hosted REST API that converts financial market price quotes into trade indicators.  It's a language agnostic HTTP interface to our [popular NuGet library](https://dotnet.stockindicators.dev).  Both the library and this API are built with the latest .NET technology.  It can be hosted in almost any environment and operating system (Linux, Windows, MacOS, etc.).
