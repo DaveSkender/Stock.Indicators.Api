@@ -38,18 +38,21 @@ services.AddSwaggerGen(options =>
 });
 
 // get CORS origins from appsettings
-string[] origins = Array.Empty<string>();
-IConfigurationSection corsOrigins = configuration.GetSection("CorsOrigins");
+string?[] configOrigins = configuration
+    .GetSection("CorsOrigins")
+    .GetChildren()
+    .Select(x => x.Value)
+    .ToArray();
 
-if (corsOrigins != null)
+string[] origins = [];
+
+if (configOrigins is not null)
 {
-    List<(string key, string value)>? originKeys = corsOrigins
-      .Get<List<(string key, string value)>>();
-
-    if (originKeys != null)
-    {
-        origins = originKeys.Select(x => x.value).ToArray();
-    }
+    origins = configOrigins!;
+}
+else
+{
+    throw new InvalidOperationException("CORS Origins are missing from App Settings.");
 }
 
 // setup CORS for website

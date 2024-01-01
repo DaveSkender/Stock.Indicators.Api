@@ -3,7 +3,10 @@
 
 title: Stock Indicators API
 tagline: "Transform price quotes into trading insights."
+repository: DaveSkender/Stock.Indicators.Api
 locale: en_US
+baseurl: ""
+url: "https://api-docs.stockindicators.dev"
 
 # social media information
 image:
@@ -29,6 +32,8 @@ twitter:
   username: daveskender
   card: summary
 
+clarity: false
+
 # site plugins and settings
 plugins:
   - jekyll-github-metadata
@@ -52,11 +57,6 @@ exclude:
     "GemFile",
     "node_modules",
     "vendor",
-  ]
-
-include:
-  [
-    "pages"
   ]
 
 permalink: pretty

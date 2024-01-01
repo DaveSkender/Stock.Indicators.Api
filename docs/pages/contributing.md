@@ -35,13 +35,13 @@ Use the [Discussions](https://github.com/DaveSkender/Stock.Indicators.Api/discus
 
 ## Project management
 
-- Planned work is managed in [the backlog](https://github.com/users/DaveSkender/projects/1).
+- Planned work is managed in [the backlog](https://github.com/users/DaveSkender/projects/1) alongside our .NET library work.
 - Work items are primarily entered as Notes (not Issues), except where an issue or feature is user reported.  With that said, Notes can be converted to Issues if in-progress and collaborative discussion is needed.
 
 ## Developing
 
 - Read this first: [A Step by Step Guide to Making Your First GitHub Contribution](https://codeburst.io/a-step-by-step-guide-to-making-your-first-github-contribution-5302260a2940).  I also have a discussion [on Forking](https://github.com/DaveSkender/Stock.Indicators/discussions/503) if you have questions.
-- If you want to work on something specific, please mention your intention on the related [Issue](https://github.com/DaveSkender/Stock.Indicators/issues).  If an Issue does not exist for your contribution, please create one before starting.  This will help us reserve that feature and avoid duplicative efforts.
+- If you want to work on something specific, please mention your intention on the related [Issue](https://github.com/DaveSkender/Stock.Indicators.Api/issues).  If an Issue does not exist for your contribution, please create one before starting.  This will help us reserve that feature and avoid duplicative efforts.
 - Do not commingle multiple contributions on different topics.  Please keep changes small and separate.
 
 ### Local hosting
@@ -71,9 +71,9 @@ See GitHub documentation for initial [Ruby and Jekyll setup instructions for Git
 ```bash
 # from /docs folder
 bundle install
-bundle exec jekyll serve
+bundle exec jekyll serve -o -l
 
-# then open site on http://127.0.0.1:4000
+# the site will open http://127.0.0.1:4000
 ```
 
 ### Accessibility testing
