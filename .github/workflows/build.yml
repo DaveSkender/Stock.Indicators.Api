@@ -13,9 +13,6 @@ jobs:
     name: unit tests
     runs-on: ubuntu-latest
 
-    permissions:
-      actions: write
-
     steps:
 
       - name: Clean test workspace
