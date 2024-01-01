@@ -4,6 +4,8 @@
 title: Stock Indicators API
 tagline: "Transform price quotes into trading insights."
 locale: en_US
+baseurl: ""
+url: "https://api-docs.stockindicators.dev"
 
 # social media information
 image:
@@ -52,11 +54,6 @@ exclude:
     "GemFile",
     "node_modules",
     "vendor",
-  ]
-
-include:
-  [
-    "pages"
   ]
 
 permalink: pretty
