@@ -1,4 +1,4 @@
-name: Indicators
+name: API
 
 on:
   push:
@@ -13,7 +13,15 @@ jobs:
     name: unit tests
     runs-on: ubuntu-latest
 
+    permissions:
+      actions: write
+
     steps:
+
+      - name: Clean test workspace
+        run: |
+          rm -rf ./test-results/* || true
+          rm -rf ./test-results/.??* || true
 
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -31,7 +39,7 @@ jobs:
           --property:ContinuousIntegrationBuild=true
           -warnAsError
 
-      - name: Test indicators
+      - name: Run tests
         id: test-api
         run: >
           dotnet test test/Tests.csproj
