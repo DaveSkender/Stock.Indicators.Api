@@ -3,6 +3,7 @@
 
 title: Stock Indicators API
 tagline: "Transform price quotes into trading insights."
+repository: DaveSkender/Stock.Indicators.Api
 locale: en_US
 baseurl: ""
 url: "https://api-docs.stockindicators.dev"
