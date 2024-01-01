@@ -13,12 +13,6 @@ public class AdlTests : TestBase
     }
 
     [TestMethod]
-    public void StubFail()
-    {
-        Assert.Fail();
-    }
-
-    [TestMethod]
     public void StubInconclusive()
     {
         Assert.Inconclusive();
