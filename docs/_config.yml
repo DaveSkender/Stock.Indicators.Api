@@ -32,6 +32,8 @@ twitter:
   username: daveskender
   card: summary
 
+clarity: false
+
 # site plugins and settings
 plugins:
   - jekyll-github-metadata
