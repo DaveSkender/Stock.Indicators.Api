@@ -1,36 +1,31 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <TypeScriptTarget>ES2021</TypeScriptTarget>
-  </PropertyGroup>
-
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <TypeScriptTarget>ES2021</TypeScriptTarget>
-  </PropertyGroup>
-
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-
+    <Title>charts.stockindicators.dev</Title>
+    <Description>A stock chart, demonstrating the Stock Indicators for .NET NuGet library</Description>
+    <Copyright>@2020 Dave Skender</Copyright>
+    <RepositoryUrl>https://github.com/DaveSkender/Stock.Charts</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
     <PackageIcon>favicon.ico</PackageIcon>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <IncludeSymbols>True</IncludeSymbols>
-
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeSymbols>True</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7" />
-    <PackageReference Include="Skender.Stock.Indicators" Version="2.4.10" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+    <PackageReference Include="Skender.Stock.Indicators" Version="2.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
