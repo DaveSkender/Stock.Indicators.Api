@@ -13,12 +13,7 @@ public class Quote : IQuote, ISeries
     public decimal Volume { get; set; }
 }
 
-public sealed class Error
+public sealed class Error(string msg)
 {
-    public Error(string msg)
-    {
-        Message = msg;
-    }
-
-    public string Message { get; }
+    public string Message { get; } = msg;
 }
