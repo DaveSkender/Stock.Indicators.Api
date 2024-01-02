@@ -85,8 +85,13 @@ else
     app.UseHsts();
 }
 
+// allows favicon.ico to be served
+app.UseStaticFiles();
+
 // configure the HTTP request pipeline.
 app.UseHttpsRedirection();
+
+// use routing with CORS
 app.UseRouting();
 app.UseCors("CorsPolicy");
 
