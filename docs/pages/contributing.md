@@ -82,7 +82,7 @@ bundle exec jekyll serve -o -l
 - build the site locally (see above), then:
 
 ```bash
-npx pa11y-ci --sitemap http://127.0.0.1:4000/sitemap.xml"
+npx pa11y-ci --sitemap http://127.0.0.1:4000/sitemap.xml
 ```
 
 ## Submitting changes
@@ -100,7 +100,7 @@ If you want to contribute administratively, do code reviews, or provide general 
 
 ## Standards and design guidelines
 
-- [Guiding principles for this project](https://github.com/DaveSkender/Stock.Indicators/discussions/648)
+- [Guiding principles for this project](https://github.com/DaveSkender/Stock.Indicators.Api/discussions/7)
 - [.NET Framework Design Guidelines](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines)
 
 ## License
